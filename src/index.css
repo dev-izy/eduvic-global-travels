@@ -1,0 +1,244 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Design tokens
+   The codebase already referenced primary / accent / background /
+   foreground utilities, but nothing defined them, so those classes
+   compiled to nothing. They are declared here so the whole app
+   (public pages, client portal, admin) renders on one palette.
+   ------------------------------------------------------------------ */
+@theme {
+  /* Navy — structure, navigation, primary actions */
+  --color-primary-50: #eef4ff;
+  --color-primary-100: #dbe6fe;
+  --color-primary-200: #bfd3fe;
+  --color-primary-300: #93b4fd;
+  --color-primary-400: #608bfa;
+  --color-primary-500: #2563eb;
+  --color-primary-600: #1d4ed8;
+  --color-primary-700: #1e40af;
+  --color-primary-800: #1e3a8a;
+  --color-primary-900: #172554;
+  --color-primary-950: #0b1533;
+
+  /* Orange — the brand accent already used across the marketing pages */
+  --color-accent-50: #fff7ed;
+  --color-accent-100: #ffedd5;
+  --color-accent-200: #fed7aa;
+  --color-accent-300: #fdba74;
+  --color-accent-400: #fb923c;
+  --color-accent-500: #f97316;
+  --color-accent-600: #ea580c;
+  --color-accent-700: #c2410c;
+  --color-accent-800: #9a3412;
+  --color-accent-900: #7c2d12;
+  --color-accent-950: #431407;
+
+  /* Surfaces */
+  --color-background-50: #ffffff;
+  --color-background-100: #f4f6f8;
+  --color-background-200: #e6eaef;
+  --color-background-300: #d3d9e1;
+  --color-background-400: #aeb7c4;
+  --color-background-500: #8c97a7;
+  --color-background-900: #111827;
+
+  /* Text */
+  --color-foreground-300: #cbd5e1;
+  --color-foreground-400: #94a3b8;
+  --color-foreground-500: #64748b;
+  --color-foreground-600: #475569;
+  --color-foreground-700: #334155;
+  --color-foreground-800: #1e293b;
+  --color-foreground-900: #0f172a;
+  --color-foreground-950: #020617;
+
+  --font-heading: "Georgia", "Times New Roman", serif;
+}
+
+/* ------------------------------------------------------------------
+   Base
+   ------------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background-50);
+  color: var(--color-foreground-800);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent-500);
+  outline-offset: 2px;
+}
+
+/* Spam honeypot — off screen but not display:none, so bots still fill it */
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-background-300);
+  border-radius: 999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-background-400);
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ------------------------------------------------------------------
+   Motion
+   One reveal pattern used site-wide, plus a few purposeful accents.
+   Everything is disabled under prefers-reduced-motion.
+   ------------------------------------------------------------------ */
+@keyframes ev-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes ev-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ev-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes ev-shimmer {
+  from {
+    background-position: -140% 0;
+  }
+  to {
+    background-position: 240% 0;
+  }
+}
+
+/* Scroll reveal — element starts hidden, .is-visible is added by the
+   Reveal component when it enters the viewport. */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.animate-fade-up {
+  animation: ev-fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-fade-in {
+  animation: ev-fade-in 0.5s ease-out both;
+}
+.animate-scale-in {
+  animation: ev-scale-in 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Route change transition */
+.page-enter {
+  animation: ev-fade-in 0.35s ease-out both;
+}
+
+/* Card / row lift on hover */
+.hover-lift {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Underline that grows from the left on nav links */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.35rem;
+  height: 1.5px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-underline:hover::after,
+.link-underline[data-active="true"]::after {
+  transform: scaleX(1);
+}
+
+/* Loading placeholder */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-background-100) 25%,
+    var(--color-background-200) 37%,
+    var(--color-background-100) 63%
+  );
+  background-size: 240% 100%;
+  animation: ev-shimmer 1.4s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .animate-fade-up,
+  .animate-fade-in,
+  .animate-scale-in,
+  .page-enter,
+  .skeleton {
+    animation: none;
+  }
+  .hover-lift:hover {
+    transform: none;
+  }
+  .link-underline::after {
+    transition: none;
+  }
+}
