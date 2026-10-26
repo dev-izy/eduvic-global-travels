@@ -151,13 +151,6 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto pt-16">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
-            <i className="ri-shield-check-line text-orange-400 text-sm" />
-            <span className="text-xs font-semibold text-white tracking-widest uppercase">
-              Nigeria&apos;s Trusted Travel Partner
-            </span>
-          </div>
 
           {/* Main Title */}
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-white leading-tight mb-6 tracking-tight">
