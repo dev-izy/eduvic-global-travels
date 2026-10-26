@@ -5,7 +5,7 @@ import PublicFooter from "../components/features/PublicFooter";
 import Reveal from "../components/features/Reveal";
 import { durationInDays, durationKey, formatDurationTitle, normalizeUnit } from "../lib/duration";
 import { supabase } from "../lib/supabase";
-import travelVideo from "../assets/coast-view.mp4";
+import travelVideo from "../assets/12443216_3840_2160_60fps-compressed.mp4";
 
 interface FeaturedPackage {
   id: string;
