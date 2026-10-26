@@ -101,7 +101,7 @@ export default function PublicFooter() {
               </li>
               <li className="flex items-start gap-2.5 text-sm text-foreground-400">
                 <i className="ri-time-line text-accent-400 mt-0.5" />
-                <span>Mon - Fri: 8:00 AM - 5:00 PM</span>
+                <span>Mon - Fri: 09:00 AM - 5:00 PM <br />Sat: 09:00 AM - 01:00 PM</span>
               </li>
             </ul>
           </div>
