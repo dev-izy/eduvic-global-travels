@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { exportLeads } from "../../lib/Leads";
+import { exportLeads } from "../../lib/leads";
 
 /**
  * Downloads every person who has submitted a booking as a CSV file
