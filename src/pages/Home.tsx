@@ -150,7 +150,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-slate-900/50 backdrop-brightness-95" />
         </div>
 
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto pt-16">
+        <div className="relative z-15 text-left px-6 md:px-12 max-w-7xl mx-auto w-full pt-20 pb-12">
 
           {/* Main Title */}
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-white leading-tight mb-6 tracking-tight">
@@ -159,12 +159,12 @@ export default function Home() {
             <span className="text-orange-500">Simplified</span>
           </h1>
 
-          <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+          <p className="text-base md:text-lg text-white/90 max-w-2xl mb-10 leading-relaxed font-normal">
             From visa processing to curated holiday packages, we handle every detail. Book consultations instantly, track applications live, and let our experts guide you to unforgettable destinations.
           </p>
 
           {/* Hero Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-14">
             <Link
               to="/packages"
               className="px-8 py-3.5 bg-orange-500 text-white hover:bg-orange-600 rounded-lg font-semibold text-base transition-all shadow-lg shadow-orange-500/25 whitespace-nowrap"
@@ -180,7 +180,7 @@ export default function Home() {
           </div>
 
           {/* Filter Bar */}
-          <div className="bg-white rounded-xl shadow-2xl p-4 md:p-6 max-w-4xl mx-auto text-left border border-slate-100">
+          <div className="bg-white rounded-xl shadow-2xl p-4 md:p-6 w-full text-left border border-slate-100">
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 items-end">
               <div>
                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">
@@ -259,7 +259,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:block">
+        <div className="absolute bottom-8 left-12 z-10 hidden md:block">
           <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-1.5">
             <div className="w-1.5 h-3 rounded-full bg-orange-400 animate-bounce" />
           </div>
