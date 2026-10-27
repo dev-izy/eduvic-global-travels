@@ -399,26 +399,26 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-16 md:py-24 px-4 md:px-6 overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://readdy.ai/api/search-image?query=Modern%20minimalist%20airport%20departure%20lounge%20with%20floor%20to%20ceiling%20windows%20showing%20a%20dramatic%20sunset%20sky%20with%20orange%20and%20deep%20navy%20blue%20tones%2C%20comfortable%20leather%20seating%2C%20soft%20ambient%20lighting%2C%20clean%20elegant%20interior%20design%2C%20luxury%20travel%20atmosphere%2C%20editorial%20photography%20style%2C%20warm%20and%20inviting%20mood%2C%20high-end%20commercial%20interior&width=1600&height=600&seq=cta-eduvic-v2-01&orientation=landscape"
-            alt="Travel experience"
-            className="w-full h-full object-cover object-top"
-          />
-          <div className="absolute inset-0 bg-slate-950/80" />
-        </div>
-        <Reveal className="relative z-10 max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Ready to Start Your Journey?</h2>
-          <p className="text-base md:text-lg text-white/80 mb-8 leading-relaxed">
-            Book a free consultation today. Our travel experts will help you plan the perfect trip — from visa to takeoff, we handle it all.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/booking" className="px-8 py-3.5 bg-orange-500 text-white rounded-lg hover:bg-orange-600 hover:-translate-y-0.5 font-semibold text-base transition-all duration-200 whitespace-nowrap shadow-lg shadow-orange-500/20">Book Consultation</Link>
-            <Link to="/packages" className="px-8 py-3.5 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-lg hover:bg-white/20 font-semibold text-base transition-all whitespace-nowrap">Browse Packages</Link>
-          </div>
-        </Reveal>
-      </section>
+    <section className="relative py-16 md:py-24 px-4 md:px-6 overflow-hidden">
+  <div className="absolute inset-0">
+    <img
+      src="https://readdy.ai/api/search-image?query=Modern%20minimalist%20airport%20departure%20lounge%20with%20floor%20to%20ceiling%20windows%20showing%20a%20dramatic%20sunset%20sky%20with%20orange%20and%20deep%20navy%20blue%20tones%2C%20comfortable%20leather%20seating%2C%20soft%20ambient%20lighting%2C%20clean%20elegant%20interior%20design%2C%20luxury%20travel%20atmosphere%2C%20editorial%20photography%20style%2C%20warm%20and%20inviting%20mood%2C%20high-end%20commercial%20interior&width=1600&height=600&seq=cta-eduvic-v2-01&orientation=landscape"
+      alt="Travel experience"
+      className="w-full h-full object-cover object-top"
+    />
+    <div className="absolute inset-0 bg-slate-950/80" />
+  </div>
+  <Reveal className="relative z-15 max-w-3xl mx-auto text-left">
+    <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Ready to Start Your Journey?</h2>
+    <p className="text-base md:text-lg text-white/80 mb-8 leading-relaxed">
+      Book a free consultation today. Our travel experts will help you plan the perfect trip — from visa to takeoff, we handle it all.
+    </p>
+    <div className="flex flex-col sm:flex-row items-start justify-start gap-4">
+      <Link to="/booking" className="px-8 py-3.5 bg-orange-500 text-white rounded-lg hover:bg-orange-600 hover:-translate-y-0.5 font-semibold text-base transition-all duration-200 whitespace-nowrap shadow-lg shadow-orange-500/20">Book Consultation</Link>
+      <Link to="/packages" className="px-8 py-3.5 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-lg hover:bg-white/20 font-semibold text-base transition-all whitespace-nowrap">Browse Packages</Link>
+    </div>
+  </Reveal>
+</section>
 
       {/* Stats */}
       <section className="py-14 md:py-20 px-4 md:px-6 bg-slate-50">

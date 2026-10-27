@@ -131,7 +131,7 @@ export default function PackageDetail() {
 
               <div>
                 <h2 className="text-xl font-heading font-semibold text-foreground-950 mb-3">About This Package</h2>
-                <p className="text-sm text-foreground-500 leading-relaxed">{pkg.description}</p>
+                <p className="text-sm text-foreground-500 leading-relaxed whitespace-pre-line">{pkg.description}</p>
               </div>
 
               {/* Inclusions */}
